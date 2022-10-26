@@ -19,5 +19,6 @@ Trained a model that consisted of 2 Convolutions with batch norms and activation
 As a loss function used CTCLoss. Used several types of augmentations, the best ones that I decided to keep are GaussianNoise and Pitch Shifter.
 
 # Checkpoints:
-best model after 20 epochs - ![a link](https://github.com/adolkhan/AudioMNIST/blob/main/checkpoints/checkpoint_epoch_20.pth)
-best model after 100 epochs - ![a link](https://github.com/adolkhan/AudioMNIST/blob/main/checkpoints/checkpoint_epoch_100.pth)
+best model after 20 epochs - [checkpoint](https://github.com/adolkhan/AudioMNIST/blob/main/checkpoints/checkpoint_epoch_20.pth)
+
+best model after 100 epochs - [checkpoint](https://github.com/adolkhan/AudioMNIST/blob/main/checkpoints/checkpoint_epoch_100.pth)
