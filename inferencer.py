@@ -4,7 +4,7 @@ import torch
 import torchaudio.functional
 from torchaudio.models.decoder import ctc_decoder
 from models.biLSTM import biLSTM
-from models.miniDeepSpeech import MiniDeepSpeech
+from models.maskedCNNbiLSTM import MaskedCNNbiLSTM
 from models.CNNbiLSTM import CNNbiLSTM
 from utils import Featurizer
 from functools import reduce
@@ -20,7 +20,7 @@ class Inferencer:
     def __init__(self, model_path, tokens=TOKENS, outfile="data/test_predictions.csv"):
         self.featurizer = Featurizer()
         self.outfile = outfile
-        self.model = MiniDeepSpeech(input_dim=64, hidden_size=128, num_vocabs=13)
+        self.model = MaskedCNNbiLSTM(input_dim=64, hidden_size=128, num_vocabs=13)
         checkpoint = torch.load(model_path)
         self.model.load_state_dict(checkpoint)
         self.beam_search_decoder = ctc_decoder(
@@ -48,4 +48,4 @@ class Inferencer:
                 except:
                     out_str = "None"
 
-                f.write(file_path + " " + str(out_str)+"\n")
+                f.write(file_path + "," + str(out_str)+"\n")

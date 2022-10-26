@@ -65,7 +65,7 @@ class MaskConv(nn.Module):
         return seq_lens.int()
 
 
-class MiniDeepSpeech(nn.Module):
+class MaskedCNNbiLSTM(nn.Module):
     def __init__(self, input_dim, hidden_size, num_vocabs, num_layers=1, dropout=0.3, bidirectional=True):
         super().__init__()
 
